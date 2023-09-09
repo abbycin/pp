@@ -14,8 +14,12 @@
 #define ELEM_SZ 4096U
 #define ELEM_SHIFT 12
 #define ELEM_MASK 4095
+#ifndef NDEBUG
 #define debug(fmt, ...)                                                        \
 	fprintf(stderr, "%s:%d " fmt "\n", __FILE__, __LINE__, ##__VA_ARGS__)
+#else
+#define debug(fmt, ...)
+#endif
 
 int pool_init(size_t bytes);
 

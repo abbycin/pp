@@ -262,7 +262,7 @@ static int on_send(struct conn *c, send_wr_t *tx)
 {
 	struct ibv_send_wr *w = &tx->wr;
 	void *mem = (void *)w->sg_list->addr;
-	struct rsp_hdr *h = mem;
+	struct rsp_hdr _nou *h = mem;
 
 	debug("req %u responsed", h->req_id);
 	assert(h->req_id != 0);

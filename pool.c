@@ -28,11 +28,6 @@ struct pool {
 
 static struct pool g_pool;
 
-static inline uint64_t elem_id(void *start, void *elem)
-{
-	return ((uint64_t)elem - (uint64_t)start) >> ELEM_SHIFT;
-}
-
 int pool_init(size_t bytes)
 {
 	uint32_t nr_elem = bytes >> ELEM_SHIFT;
