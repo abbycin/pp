@@ -475,6 +475,8 @@ static int transfer_file(struct conn *c, struct fctx *fctx)
 		if (rc)
 			return -1;
 	}
+	close(fctx->fd);
+	fctx->fd = 0;
 	return 0;
 }
 
